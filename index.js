@@ -2,8 +2,9 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
-const filterOption = document.querySelector(".filter-todo")
-
+const filterOption = document.querySelector(".filter-todo");
+let body = document.body
+let nav = document.getElementById('dark')
 // Event Listeners
 document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener("click", addTodo);
@@ -11,6 +12,12 @@ todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("click", filterTodo);
 
 // Functions
+nav.style.display = "none"
+function darkMode() {
+    console.log("TOT")
+    body.classList.toggle("dark")
+}
+
 function addTodo(event) {
     // Prevent form from submitting
     event.preventDefault();
